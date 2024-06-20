@@ -1,19 +1,23 @@
 <template>
   <div class="login">
-    <el-card>
+    <el-card style="max-width: 600px;">
       <h2>Login</h2>
       <el-form :model="form" label-width="auto" style="max-width: 600px">
         <el-form-item>
           <el-input v-model="form.username" placeholder="Username">
             <template #prefix>
-              <el-icon class="el-input__icon"><User /></el-icon>
+              <el-icon class="el-input__icon">
+                <User />
+              </el-icon>
             </template>
           </el-input>
         </el-form-item>
         <el-form-item>
           <el-input v-model="form.password" placeholder="Password">
             <template #prefix>
-              <el-icon class="el-input__icon"><Lock /></el-icon>
+              <el-icon class="el-input__icon">
+                <Lock />
+              </el-icon>
             </template>
           </el-input>
         </el-form-item>
@@ -28,7 +32,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import {useCounterStore} from '../stores/counter'
+import { useCounterStore } from '../stores/counter'
 
 const state = useCounterStore()
 
@@ -48,6 +52,14 @@ function login() {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
 h2 {
   text-align: center;
   padding-bottom: 10px;
