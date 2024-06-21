@@ -21,17 +21,22 @@ const router = createRouter({
           if (!isAuthenticated) next('/login')
           else next()
         })
-      }
+      },
+      children: [
+        {
+          path: 'apiclient',
+          component: () => import('../views/ApiTestView.vue')
+        },
+        {
+          path: 'other',
+          component: () => import('../views/OtherView.vue')
+        }
+      ]
     },
     {
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginView.vue')
-    },
-    {
-      path: '/apiclient',
-      name: 'apiclient',
-      component: () => import('../views/ApiTestView.vue')
     }
   ]
 })

@@ -2,7 +2,7 @@
   <div class="login">
     <el-card style="max-width: 600px;">
       <h2>Login</h2>
-      <el-form :model="form" label-width="auto" style="max-width: 600px">
+      <el-form :model="form" style="max-width: 600px;">
         <el-form-item>
           <el-input v-model="form.username" placeholder="Username">
             <template #prefix>
@@ -44,7 +44,6 @@ const form = reactive({
 })
 
 function login() {
-  console.log('login')
   state.loggedIn = true
   router.push('/home')
 }
